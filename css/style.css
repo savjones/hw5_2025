@@ -1,9 +1,5 @@
-/* style.css */
-
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-/* Global Styles */
 body {
   font-family: 'Poppins', serif;
   background: #f1f1f1 url('concrete_seamless.png') repeat;
@@ -11,9 +7,6 @@ body {
   padding: 0;
 }
 
-/* Logo Animation */
-/* Animates the logo from a width of 25px (with 0 opacity)
-   to 475px (with full opacity) over 5 seconds */
 @keyframes logoGrow {
   from {
     width: 25px;
@@ -25,35 +18,28 @@ body {
   }
 }
 
-/* Apply the animation to elements with the "logo" class */
 .logo {
   animation: logoGrow 5s forwards;
 }
 
-/* Disable animation for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .logo {
     animation: none;
   }
 }
 
-/* Header Styling */
-/* Applies flex layout to all header elements */
 header {
   display: flex;
   align-items: center;
   padding: 10px;
 }
 
-/* Make the first header (direct child of body) sticky at the top */
 body > header {
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* Navigation Links Container */
-/* Using flex display on the nav_links class for layout */
 .nav_links {
   display: flex;
   list-style: none;
@@ -61,21 +47,16 @@ body > header {
   padding: 0;
 }
 
-/* Individual Navigation Items */
 .nav_links li {
   margin: 0 10px;
 }
 
-/* Link Styling: 
-   Ensures links have the same color even after being visited */
 .nav_links a,
 .nav_links a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-/* Card Header Styling */
-/* Styles only header elements that are direct children of a .card */
 .card > header {
   background: #288088;
   border: 2px solid #45ADAD;
@@ -84,23 +65,19 @@ body > header {
   border-top-right-radius: 50px;
 }
 
-/* Additional specificity if needed for proper border-radius */
 .card > header:first-child {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
 
-/* Card Container Styling */
 .card {
   display: flex;
   flex-direction: column;
-  flex: 0 0 450px; /* Initial flex-basis for mobile view */
+  flex: 0 0 450px;
   margin: 10px;
   padding: 10px;
 }
 
-/* Pricing Section Styling */
-/* Centers the cards horizontally and vertically using flex */
 .pricing {
   display: flex;
   flex-wrap: wrap;
@@ -109,7 +86,6 @@ body > header {
   gap: 20px;
 }
 
-/* Gallery Styling */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -117,64 +93,52 @@ body > header {
   gap: 20px;
 }
 
-/* Styles for gallery images */
 .gallery img {
   border: 10px solid #50C7C7;
   margin: 10px;
   width: 300px;
 }
 
-/* Media Query for Screens Wider Than 900px */
 @media screen and (min-width: 900px) {
-  /* Adjust header layout to have logo on the left and nav on the right */
   header {
     justify-content: space-between;
   }
   
-  /* Align navigation links to the right */
   .nav_links {
     justify-content: flex-end;
   }
   
-  /* Adjust card flex-basis in the pricing section */
   .card {
     flex: 0 0 275px;
   }
 }
 
-/* Print Styles for Portrait Mode */
 @media print and (orientation: portrait) {
-  /* Change font for printing */
   body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f1f1f1; /* Remove background image */
+    background: #f1f1f1;
   }
   
-  /* Adjust header and navigation for print view */
   header, .nav_links {
     display: block;
     text-align: center;
   }
   
-  /* Align pricing cards along the bottom */
   .pricing {
     align-items: flex-end;
   }
   
-  /* Adjust card styles for print */
   .card {
     border: 2px solid #45ADDD;
     flex: 0 0 325px;
   }
   
-  /* Hide the gallery when printing */
   .gallery {
     display: none;
   }
   
-  /* Challenge: Add thumbs-up icon before card content (without using list-style) */
   .card::before {
-    content: "\1F44D"; /* Unicode for thumbs up */
+    content: "\1F44D";
     color: yellow;
     margin-right: 5px;
   }
